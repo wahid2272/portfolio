@@ -5,19 +5,20 @@
 }
 
 body {
-  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-family: "PT Sans", sans-serif;
 }
 
 input,
 textarea,
 button {
-  font-family: 'Courier New', Courier, monospace;
+  font-family: "PT Sans", sans-serif;
 }
 
 h1,
 h2,
 h3 {
   margin-bottom: 1.8rem;
+  text-transform: capitalize;
 }
 
 p {
@@ -27,6 +28,7 @@ p {
 
 a {
   text-decoration: none;
+  color: coral;
 }
 
 .container {
@@ -43,6 +45,12 @@ header {
   padding: 1.5rem;
   display: flex;
   justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  z-index: 3;
+  width: 100vw;
+  top: 0;
+  left: 0;
 }
 
 header #logo a {
@@ -60,19 +68,66 @@ header nav ul li {
   display: inline-block;
 }
 
-
-
 header nav ul li a {
   color: white;
   padding: 0.5rem 0;
   margin: 0 1rem;
-  border-bottom: 2px double transparent;
+  display: block;
+  border-bottom: 3px double transparent;
 }
 
 header nav ul li a:hover {
-  border-bottom: 2px double coral;
+  border-bottom: 3px double coral;
 }
 
+header nav i {
+  font-size: inherit;
+  color: coral;
+}
+
+/* Hiding nested ul by default */
+
+header nav ul li ul {
+  display: none;
+}
+
+header nav ul li:hover a {
+  color: coral;
+  cursor: pointer;
+}
+
+/* Nested dropdown menu show */
+
+nav ul li {
+  position: relative;
+}
+
+nav ul li:hover ul {
+  display: block;
+  position: absolute;
+  right: 0;
+  width: 150px;
+  padding: 1rem;
+}
+
+nav ul li:hover ul li {
+  display: block;
+  background: #e7e7e7;
+}
+
+nav ul li:hover ul li a {
+  color: #333;
+}
+
+nav ul li:hover ul li:hover {
+  color: inherit;
+}
+
+/* Main Body */
+
+main {
+  margin-top: 80px;
+}
 
 /* Hero Banner */
 
@@ -82,6 +137,16 @@ main #hero-banner {
   display: flex;
   align-items: center;
   position: relative;
+}
+
+#hero-banner::before {
+  content: "";
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  background: rgb(21, 21, 21, 0.4);
+  top: 0;
+  left: 0;
 }
 
 main #hero-banner h1 {
@@ -207,6 +272,64 @@ progress[value]::-webkit-progress-value {
   background-size: 35px 20px, 100% 100%, 100% 100%;
 }
 
+/* Gellery Section */
+
+.gallery-group {
+  display: grid;
+  grid-template-areas:
+  "a a b b c c"
+  "a a d d c c"
+  "e h h h c c"
+  "f h h h i i"
+  "g h h h i i";
+  grid-gap: 0.5rem;
+  grid-template-columns: repeat(6, 1fr);
+}
+
+.grid-div {
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+}
+
+.grid-item {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.grid-item:hover {
+  transform: scale(1.05);
+}
+
+.grid-item-1 {
+grid-area: a;
+}
+.grid-item-2 {
+grid-area: b;
+}
+.grid-item-3 {
+grid-area: c;
+}
+.grid-item-4 {
+grid-area: d;
+}
+.grid-item-5 {
+grid-area: e;
+}
+.grid-item-6 {
+grid-area: f;
+}
+.grid-item-7 {
+grid-area: g;
+}
+.grid-item-8 {
+grid-area: h;
+}
+.grid-item-9 {
+grid-area: i;
+}
+
 /* footer area */
 
 footer {
@@ -287,6 +410,11 @@ footer form button {
   header nav ul li a {
     padding: 0.5rem;
   }
+
+  main #gallery {
+      padding-top: 25px;
+  }
+
   .container,
   main #experience .content {
     padding: 1rem;
