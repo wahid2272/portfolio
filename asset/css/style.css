@@ -81,6 +81,10 @@ header #logo a img {
   height: 60px;
 }
 
+header .icon {
+  display: none;
+}
+
 /* Main Navigation */
 
 header nav ul {
@@ -150,6 +154,45 @@ nav ul li:hover ul li:hover {
 
 main {
   margin-top: 80px;
+}
+
+/* Back to Top Button */
+
+#button {
+  display: inline-block;
+  background-color: var(--primary-color);
+  width: 50px;
+  height: 50px;
+  text-align: center;
+  border-radius: 4px;
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  transition: background-color .3s, 
+    opacity .5s, visibility .5s;
+  opacity: 0;
+  visibility: hidden;
+  z-index: 1000;
+}
+#button::after {
+  content: "\f077";
+  font-family: FontAwesome;
+  font-weight: normal;
+  font-style: normal;
+  font-size: 2em;
+  line-height: 50px;
+  color: #fff;
+}
+#button:hover {
+  cursor: pointer;
+  background-color: #333;
+}
+#button:active {
+  background-color: #555;
+}
+#button.show {
+  opacity: 1;
+  visibility: visible;
 }
 
 /* Hero Banner */
@@ -430,13 +473,42 @@ footer form button {
   }
 }
 @media (max-width: 576px) {
-  header {
+  header .icon {
     display: block;
-    text-align: center;
-    padding: 1rem;
+  } 
+
+  header nav ul {
+    display: none;
+    position: absolute;
+    top: 100px;
+    left: 0;
+    background-color: var(--background-color);
+    width: 100%;
   }
-  header nav ul li a {
-    padding: 0.5rem;
+
+  header nav ul.mobilemenu {
+    display: block;
+  }
+
+  header nav ul li {
+    display: block;
+  }
+
+  header nav ul li {
+    display: block;
+  }
+
+  header nav ul li a:hover {
+    background-color: var(--secondary-color);
+  }
+
+  header nav ul li ul {
+    visibility: visible;
+    opacity: 1;
+    display: block;
+    position: relative;
+    top: 0;
+    padding-left: 1rem;
   }
 
   main #gallery {

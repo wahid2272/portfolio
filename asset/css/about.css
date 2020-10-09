@@ -75,3 +75,18 @@ body .info .icon {
 body .info .icon i {
   color: var(--primary-color);
 }
+
+@media (max-width: 970px) {
+  body .about-container{
+    display: grid;
+    grid-template-columns: 0 auto;
+    grid-template-rows: auto;
+    padding-bottom: 4rem;
+  }
+  
+  body .about-box {
+    padding: 15rem 15rem 15rem 0;
+    background: none;
+    opacity: 0.7;
+  }
+}
