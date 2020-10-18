@@ -1,8 +1,8 @@
 :root {
-  --primary-color:#008E9B;
+  --primary-color:#0cbe83fb;
   --background-color: #0A192F;
   --light-color: #e7e7e7;
-  --warning-color: #99911d;
+  --warning-color: #f5e93e;
   --font: 'Noto Serif', serif;
   --background-color-rgb: 10, 25, 47;
 }
@@ -64,7 +64,7 @@ body .info h1 a {
 }
 
 body .info h1 a:hover {
-  background-color: var(--primary-color);
+  background-color: #193c70;
   text-shadow: 0 0 .65px var(--primary-color), 0 0 .65px var(--primary-color);
 }
 

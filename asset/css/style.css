@@ -1,5 +1,5 @@
 :root {
-  --primary-color:#008E9B;
+  --primary-color:#0cbe83fb;
   --background-color: #0A192F;
   --light-color: #e7e7e7;
   --white-shadow-color: #bdbdbd;
@@ -15,8 +15,8 @@
 body {
   font-family: var(--font);
   background: linear-gradient(-45deg, #8ee41f, #162f44, #2a4b10, #23d5ab);
-background-size: 400% 400%;
-animation: background-animation 15s ease infinite;
+  background-size: 400% 400%;
+  animation: background-animation 15s ease infinite;
 }
 
 @keyframes background-animation {
